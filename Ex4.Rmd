@@ -1,5 +1,5 @@
 ---
-title: "Exercise #: Basic Geoprocessing Tools <br><small>Geographic Information Systems 1 Lab</small></br>"
+title: "Exercise 4: Basic Geoprocessing Tools <br><small>Geographic Information Systems 1 Lab</small></br>"
 author: "GEOG 3150"
 output:
   html_notebook:
