@@ -56,30 +56,32 @@ th, td {padding: 5px;}
 ```
 <hr></hr>
 
-About this exercise...
+The purpose of this exercise is to help familiarize you with some of the Geoprocessing Tools available in the various programs. These tools will help you to simplify, organize, and reduce the amount of information and allow you to create additional base maps from existing data.
 
 # The Introduction
 
-Blah...blah...blah...
+The _Federal Emergency Management Agency_ (FEMA) is in the process of planning for the federal distribution of resources related to natural disasters in the US. As [hurricane](https://www.noaa.gov/news-release/noaa-predicts-another-active-atlantic-hurricane-season) season approaches predictions are suggesting a very active season in the Atlantic Basin. As a FEMA analyst, you have been tasked with examining hurricane paths over the last five years that have impacted the Southeastern US. This information will be used to develop a plan for the establishment of temporary relief shelters, supply storage facilities, and mobile medical services that will be necessary in the hardest hit areas.
 
 In this exercise you will:
 
--   Blah...blah...blah...
--   Blah...blah...blah...
--   Blah...blah...blah...
--   Blah...blah...blah...
--   Blah...blah...blah...
+-   Use various methods of geoprocessing
+-   Create derived datasets
+-   Adjust the coordinate systems
+-   Create inset maps
+-   Use the attribute table for labeling
 
 Software specific directions can be found for each step below. Please submit the answer to the questions and your final map by the due date.
 
 ## Step One: The Data
 
-Blah...blah...blah...
+The data you will be using for this exercise comes from the National Oceanic and Atmospheric Administration - [Office for Coastal Management](https://coast.noaa.gov/), [Historical Hurricane Tracks interactive map](https://coast.noaa.gov/hurricanes/). Information on the site is derived from the NOAA National Hurricane Center [HURDAT2](https://www.nhc.noaa.gov/data/#hurdat) and NOAA National Centers for Environmental Information [IBTrACS](https://www.ncdc.noaa.gov/ibtracs/) data sets.
 
 <details>
 <summary><big>View Directions in <b> [ArcGIS Pro]{style="color:#ff4500"} </b></big></summary>
 
-Blah...blah...blah...
+As you have done with each of the previous exercises, Exercise 2 and Exercise 3, you will begin by launching <b>[ArcGIS Pro]{style="color:#ff4500"}</b> from the start menu or dekstop shortcut. Select **Map** from _New > Blank Templates_ and on the resulting screen provide a name and location for your project. Remember it would be beneficial to keep all of these exercises in a single folder on your computer. 
+
+With your screen now displaying the _World Topographic Map_ and _World Hillshade_ in the table of contents, navigate to 
 
 <big><b>Question No. 1</b></big>
 <blockquote>
@@ -116,7 +118,7 @@ _Insert Text Here_
 
 ## Step Two: The Analyses
 
-Blah...blah...blah...
+In this step you will organize and display the data in order to prepare it for the final visualization.
 
 <details>
 <summary><big>View Directions in <b> [ArcGIS Pro]{style="color:#ff4500"} </b></big></summary>
@@ -158,7 +160,7 @@ _Insert Text Here_
 
 ## Step Three: The Visualization
 
-Blah...blah...blah...
+You will now create a graphical display of your data that includes cartographic elements such as legend, scale bar, north arrow, etc.
 
 <details><summary><big>View directions in <b> [ArcGIS Pro]{style="color:#ff4500"} </b></span></big></summary>
 
