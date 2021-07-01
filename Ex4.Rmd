@@ -60,7 +60,7 @@ The purpose of this exercise is to help familiarize you with some of the Geoproc
 
 # The Introduction
 
-The _Federal Emergency Management Agency_ (FEMA) is in the process of planning for the federal distribution of resources related to natural disasters in the US. As [hurricane](https://www.noaa.gov/news-release/noaa-predicts-another-active-atlantic-hurricane-season) season approaches predictions are suggesting a very active season in the Atlantic Basin. As a FEMA analyst, you have been tasked with examining hurricane paths over the last five years that have impacted the Southeastern US. This information will be used to develop a plan for the establishment of temporary relief shelters, supply storage facilities, and mobile medical services that will be necessary in the hardest hit areas.
+The _Federal Emergency Management Agency_&nbsp; (FEMA) is in the process of planning for the federal distribution of resources related to natural disasters in the US. As [hurricane](https://www.noaa.gov/news-release/noaa-predicts-another-active-atlantic-hurricane-season) season approaches predictions are suggesting a very active season in the Atlantic Basin. As a FEMA analyst, you have been tasked with examining hurricane paths over the last five years that have impacted the Southeastern US. This information will be used to develop a plan for the establishment of temporary relief shelters, supply storage facilities, and mobile medical services that will be necessary in the hardest hit areas.
 
 In this exercise you will:
 
@@ -79,13 +79,60 @@ The data you will be using for this exercise comes from the National Oceanic and
 <details>
 <summary><big>View Directions in <b> [ArcGIS Pro]{style="color:#ff4500"} </b></big></summary>
 
-As you have done with each of the previous exercises, Exercise 2 and Exercise 3, you will begin by launching <b>[ArcGIS Pro]{style="color:#ff4500"}</b> from the start menu or dekstop shortcut. Select **Map** from _New > Blank Templates_ and on the resulting screen provide a name and location for your project. Remember it would be beneficial to keep all of these exercises in a single folder on your computer. 
+As you have done with each of the previous exercises, Exercise 2 and Exercise 3, you will begin by launching **[ArcGIS Pro]{style="color:#ff4500"}** from the start menu or dekstop shortcut. Select **Map** from _New > Blank Templates_ and on the resulting screen provide a name and location for your project. Remember it would be beneficial to keep all of these exercises in a single folder on your computer. 
 
-With your screen now displaying the _World Topographic Map_ and _World Hillshade_ in the table of contents, navigate to 
+With your screen now displaying the _World Topographic Map_&nbsp; and _World Hillshade_&nbsp; in the table of contents, navigate to GitHub and download **[all datasets for this exercise here](https://github.com/chrismgentry/GIS1-Exercise-4/tree/main/Data)** to your project folder and extract the data. If you have any questions on how to retrieve and extract the data refer to [Exercise 2, Step 1](https://chrismgentry.github.io/GIS1-Exercise-2/#11_Step_One:_The_Data) for detailed instructions.
+
+Add the _states_, _counties_, and all _hurricanes_&nbsp; datasets to the map view. Remember that the layers in your _Table of Contents_&nbsp; are drawn in the order they appear. So the first item on the list will be the first show, followed, by the second and so on. Therefore, if you want certain datasets to be visible above all others it should be located at the top. For polygons, you can edit the fill and transparency (found under the appearance tab in effects) to allow for items underneath to be scene. For example, in the image below, the hurricane tracts are ordered by year and are situated on top of the county and state polygons. If the polygons were drawn first, the hurricane tracts would not be shown once they make landfall. In this example, the states polygons are displayed with a hollow fill and white border to allow for the counties to show through with their black borders.
+
+<p align="center"><div class="zoom"><img src= "Images/arcgis-ex4-data.jpg" alt="Ex4 Datasets" style="width:100%"></div></p>
+
+Refer back to previous exercises to review how to change the symbology for a given dataset. You should experiment with different order, fill, and transparencies to customize your view of the data.
+
+Because FEMA is only interested in counties impacted by hurricanes, you need to select only the states that are intersected by the tracts. There are several ways to subset data in [ArcGIS Pro]{style="color:#ff4500"}. For this example we can select counties by name through a structured query language (SQL), we can use graphical tools to select data, and we can use geoprocessing tools to subset the data. Because this is a learning module, you will be learning several different techniques. While this might not necessarily be the quickest method, the purpose of this exercise is to introduce you to several tools you can use as appropriate in future projects. 
+
+To continue gathering data for this exercise you are first going to isolate the data you want to select. In the _Table of Contents_ click the **List by Selection** button <img src= "Images/arcgis-list-selection-button.jpg" alt="List by Selection" width = "20" height = "20"> to show a list of the selectable datasets in the project. Because you should have a number of datasets in the project, to isolate only the states file, right-click on the _USA_States_Continental_&nbsp; and chose "Make this the only selectable layer". 
+
+<p align="center"><div class="zoom"><img src= "Images/arcgis-make-selectable.png" alt="Make data selectable" style="width:100%"></div></p>
+
+To begin, click the drop-down menu for _Select_&nbsp; on the _Map Tab_&nbsp; and choose **Lasso** from the drop-down menu and and use the cursor to draw a circle encompassing Alabama, Arkansas, Delaware, Florida, Georgia, Illinois, Indiana, Kentucky, Louisiana, Maryland, Mississippi, Missouri, New Jersey, North Carolina, Ohio, Pennsylvania, South Carolina, Tennessee, Virginia, and West Virginia. Your circle does not need to include all of the state, just a small portion. See the example below:
+
+<p align="center"><div class="zoom"><img src= "Images/arcgis-lasso-select.png" alt="Lasso Select Tool" style="width:100%"></div></p>
+
+With the states selected, return the Table of Contents to the "List by Drawing Order" button <img src= "Images/arcgis-list-draw-button.jpg" alt="List by Drawing Order" width = "20" height = "20"> and right-click on the _USA_States_Continental_&nbsp; dataset and choose **Data > Export Features** from the menu. In the resulting menu include the following options and click OK:
+
+- _Input Features_ = USA_States_Continental
+- _Output Location_ = Select a folder for the export. It it important that you do not click into the folder, simply click once to select and click OK (see example).
+- _Output Name_ = choose a name for your file and add .shp behind it to create a shapefile.
+
+<p align="center"><div class="zoom"><img src= "Images/arcgis-export-data.png" alt="Export Data" style="width:100%"></div></p>
+
+When finished you should have the file added to your project. Another technique to isolate data is by using the **Clip** analysis tool. This tool can be used to cut out a piece of one dataset using one or more of the features in another dataset as a "cookie cutter". This is useful for creating a new dataset that contains a geographic subset of the features in another larger dataset.
+
+<p align="center"><img src= "Images/arcgis-clip-illustration.png" alt="ArcGIS Pro Clip Illustration" width="515" height="202"><figcaption><small><b>Illustration from https://pro.arcgis.com/en/pro-app/latest/tool-reference/analysis/clip.htm</b></small></figcaption></p>
+
+Under the _Analysis Tab_, click the **Tools** button <img src= "Images/arcgis-toolbox-button.jpg" alt="Geoprocessing Tools" width="20" height="20"> to open a geoprocessing search menu. In the search box at the top of the menu type in the word **Clip** and click enter. The first option will show "**Clip** (Analysis Tools)". Click on the tool to open the associated menu. In the new menu choose the following options from the drop-down menus and click Run :
+
+- _Input Features_ = USA_Counties
+- _Clip Features_ = ex4_States (or the name of the file for the selected states in the previous step)
+- _Output Feature Class_ = choose a name for your file and add .shp behind it to create a shapefile.
+
+<p align="center"><div class="zoom"><img src= "Images/arcgis-clip-tool.png" alt="Clip Analysis Tool" style="width:100%"></div></p>
+
+This will create a dataset containing only the counties that are included within the states used as the selection. While the colors were altered to highlight the changes and additions to the project, you should now see a new dataset in your Table of Contents that only contains those counties. 
+
+<p align="center"><div class="zoom"><img src= "Images/arcgis-clipped-data.png" alt="Clipped Counties" style="width:100%"></div></p>
+
+Finally, while having the individual hurricane tracts can be important, for the purposes of this exercise you are going to use the **Merge** tool to combined all of the individual hurricane tracts into a single dataset. Similar to the previous step, click on the _Tools_&nbsp; button on the Analysis Tab and search for **Merge**. Click on **Merge** (Data Management Tool) and in the new window choose the following options from the drop-down menu and click run:
+
+- _Input Datasets_ = Either from the drop-down menu or the _add many button_&nbsp; <img src= "Images/arcgis-add-many-button.jpg" alt="Add Many" width = "10" height = "10"> select all of the individual hurricane tracts. If using the "add many" button you will need to click the "add" link in the bottom right-hand corner of the input. If you use the drop-down menu the data will add automatically
+- _Output Dataset_ = choose a name for your file and add .shp behind it to create a shapefile.
+
+<p align="center"><div class="zoom"><img src= "Images/arcgis-clipped-data.png" alt="Clipped Counties" style="width:100%"></div></p>
 
 <big><b>Question No. 1</b></big>
 <blockquote>
-_Insert Text Here_
+How many individual tract segments are contained in the merged hurricane dataset?
 </blockquote>
 
 </details>
