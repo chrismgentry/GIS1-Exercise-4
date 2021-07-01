@@ -123,12 +123,14 @@ This will create a dataset containing only the counties that are included within
 
 <p align="center"><div class="zoom"><img src= "Images/arcgis-clipped-data.png" alt="Clipped Counties" style="width:100%"></div></p>
 
-Finally, while having the individual hurricane tracts can be important, for the purposes of this exercise you are going to use the **Merge** tool to combined all of the individual hurricane tracts into a single dataset. Similar to the previous step, click on the _Tools_&nbsp; button on the Analysis Tab and search for **Merge**. Click on **Merge** (Data Management Tool) and in the new window choose the following options from the drop-down menu and click run:
+Finally, while having the individual hurricane tracts can be important, for the purposes of this exercise you are going to use the **Merge** tool to combined all of the individual hurricane tracts into a single dataset. Similar to the previous step, click on the _Tools_&nbsp; button on the Analysis Tab and search for **Merge**. Click on "**Merge** (Data Management Tool)" and in the new window choose the following options from the drop-down menu and click run:
 
 - _Input Datasets_ = Either from the drop-down menu or the _add many button_&nbsp; <img src= "Images/arcgis-add-many-button.jpg" alt="Add Many" width = "10" height = "10"> select all of the individual hurricane tracts. If using the "add many" button you will need to click the "add" link in the bottom right-hand corner of the input. If you use the drop-down menu the data will add automatically
 - _Output Dataset_ = choose a name for your file and add .shp behind it to create a shapefile.
 
-<p align="center"><div class="zoom"><img src= "Images/arcgis-clipped-data.png" alt="Clipped Counties" style="width:100%"></div></p>
+<p align="center"><div class="zoom"><img src= "Images/arcgis-merged-data.png" alt="Merged Hurricanes" style="width:100%"></div></p>
+
+Now you can remove the _USA_Counties_&nbsp; and all the individual hurricane tract files to reduce the clutter in your Table of Contents. To do this you simply right-click on the dataset in the Table of Contents and click _Remove_.
 
 <big><b>Question No. 1</b></big>
 <blockquote>
