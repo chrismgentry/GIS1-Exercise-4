@@ -83,7 +83,7 @@ As you have done with each of the previous exercises, Exercise 2 and Exercise 3,
 
 With your screen now displaying the _World Topographic Map_&nbsp; and _World Hillshade_&nbsp; in the table of contents, navigate to GitHub and download **[all datasets for this exercise here](https://github.com/chrismgentry/GIS1-Exercise-4/tree/main/Data)** to your project folder and extract the data. If you have any questions on how to retrieve and extract the data refer to [Exercise 2, Step 1](https://chrismgentry.github.io/GIS1-Exercise-2/#11_Step_One:_The_Data) for detailed instructions.
 
-Add the _states_, _counties_, and all _hurricanes_&nbsp; datasets to the map view. Remember that the layers in your _Table of Contents_&nbsp; are drawn in the order they appear. So the first item on the list will be the first show, followed, by the second and so on. Therefore, if you want certain datasets to be visible above all others it should be located at the top. For polygons, you can edit the fill and transparency (found under the appearance tab in effects) to allow for items underneath to be scene. For example, in the image below, the hurricane tracts are ordered by year and are situated on top of the county and state polygons. If the polygons were drawn first, the hurricane tracts would not be shown once they make landfall. In this example, the states polygons are displayed with a hollow fill and white border to allow for the counties to show through with their black borders.
+Add the _states_, _counties_, and all _hurricanes_&nbsp; datasets to the map view. Remember that the layers in your _Table of Contents_&nbsp; are drawn in the order they appear. So the first item on the list will be the first show, followed, by the second and so on. Therefore, if you want certain datasets to be visible above all others it should be located at the top by clicking and dragging the data up or down in the list. For polygons, you can edit the fill and transparency (found under the appearance tab in effects) to allow for items underneath to be scene. For example, in the image below, the hurricane tracts are ordered by year and are situated on top of the county and state polygons. If the polygons were drawn first, the hurricane tracts would not be shown once they make landfall. In this example, the states polygons are displayed with a hollow fill and white border to allow for the counties to show through with their black borders.
 
 <p align="center"><div class="zoom"><img src= "Images/arcgis-ex4-data.jpg" alt="Ex4 Datasets" style="width:100%"></div></p>
 
@@ -111,7 +111,7 @@ When finished you should have the file added to your project. Another technique 
 
 <p align="center"><img src= "Images/arcgis-clip-illustration.png" alt="ArcGIS Pro Clip Illustration" width="515" height="202"><figcaption><small><b>Illustration from https://pro.arcgis.com/en/pro-app/latest/tool-reference/analysis/clip.htm</b></small></figcaption></p>
 
-Under the _Analysis Tab_, click the **Tools** button <img src= "Images/arcgis-toolbox-button.jpg" alt="Geoprocessing Tools" width="20" height="20"> to open a geoprocessing search menu. In the search box at the top of the menu type in the word **Clip** and click enter. The first option will show "**Clip** (Analysis Tools)". Click on the tool to open the associated menu. In the new menu choose the following options from the drop-down menus and click Run :
+Under the _Analysis Tab_, click the **Tools** button <img src= "Images/arcgis-toolbox-button.jpg" alt="Geoprocessing Tools Button" width="20" height="20"> to open a geoprocessing search menu. In the search box at the top of the menu type in the word **Clip** and click enter. The first option will show "**Clip** (Analysis Tools)". Click on the tool to open the associated menu. In the new menu choose the following options from the drop-down menus and click Run :
 
 - _Input Features_ = USA_Counties
 - _Clip Features_ = ex4_States (or the name of the file for the selected states in the previous step)
@@ -121,7 +121,7 @@ Under the _Analysis Tab_, click the **Tools** button <img src= "Images/arcgis-to
 
 This will create a dataset containing only the counties that are included within the states used as the selection. While the colors were altered to highlight the changes and additions to the project, you should now see a new dataset in your Table of Contents that only contains those counties. 
 
-<p align="center"><div class="zoom"><img src= "Images/arcgis-clipped-data.png" alt="Clipped Counties" style="width:100%"></div></p>
+<p align="center"><div class="zoom"><img src= "Images/arcgis-clipped-data.png" alt="Clipped Counties" style="width:100%"></div><figcaption><small><b>Colors altered from previous images to highlight goeprocessing results.</b></small></figcaption></p>
 
 Finally, while having the individual hurricane tracts can be important, for the purposes of this exercise you are going to use the **Merge** tool to combined all of the individual hurricane tracts into a single dataset. Similar to the previous step, click on the _Tools_&nbsp; button on the Analysis Tab and search for **Merge**. Click on "**Merge** (Data Management Tool)" and in the new window choose the following options from the drop-down menu and click run:
 
@@ -172,11 +172,36 @@ In this step you will organize and display the data in order to prepare it for t
 <details>
 <summary><big>View Directions in <b> [ArcGIS Pro]{style="color:#ff4500"} </b></big></summary>
 
-Blah...blah...blah...
+Now that you have the necessary data, you need determine which counties are most significantly impacted by the hurricanes. Because hurricane winds can impact areas far away from the eye or the storm, you will begin by creating a buffer around the hurricane tracts. You can either use the **Tools** button <img src= "Images/arcgis-toolbox-button.jpg" alt="Geoprocessing Tools Button" width="20" height="20"> on the _Analysis Tab_&nbsp; or search for **Buffer** in the list of tools next to the button. In the Buffer window select the following options and click run:
+
+- _Input Features_ = The merged hurricane dataset
+- _Output Feature Class_ = choose a name for your file and add .shp behind it to create a shapefile
+- _Distance_ = 50 miles (linear unit)
+- _Side Type_ = Full
+- _End Type_ = Round
+- _Method_ = Planar
+- _Dissolve Type_ = Dissolve all output features into a single feature
+
+<p align="center"><div class="zoom"><img src= "Images/arcgis-buffer-data.png" alt="Buffer Tool" style="width:100%"></div></p>
+
+If in this step or the next you encounter a warning stating there is a "datum conflict between the input and output", just proceed with the exercise. We will discuss _datums_, a set of reference points on the earth's surface against which position measurements are made, in future exercises. While they are important to understand, for the purposes of this exercise you can ignore the warning.
+
+In this next step you need to isolate only the counties that are located within this buffer. To do this, click the **Select By Location** button <img src= "Images/arcgis-select-location-button.jpg" alt="Select By Location Button" width="20" height="20"> on the _Map Tab_&nbsp; in the Selection Section. In the new menu choose the following and click OK.
+
+- _Input Features_ = Your clipped counties
+- _Relationship_ = Choose Intersect
+- _Selecting Features_ = Your buffered hurricanes
+- _Selection Type_ = New Selection
+
+<p align="center"><div class="zoom"><img src= "Images/arcgis-select-by-location.png" alt="Select By Location" style="width:100%"></div></p>
+
+With this selection made, you can take the same steps as before to create a new dataset by right-clicking on the clipped counties dataset in the Table of Contents, going to _Data > Export Features_&nbsp; and creating a new shapefile of the selected counties. You can now remove the clipped counties you created in step one or change the symbology to make this new selection stand out.
+
+To answer the following question, open the attribute table for the new dataset you created highlighting the impacted counties. Right-click on the column header for the **Population** variable, and select statistics.
 
 <big><b>Question No. 2</b></big>
 <blockquote>
-_Insert Text Here_
+What is the total population (sum information) of the counties impacted by these hurricanes?
 </blockquote>
 
 </details>
@@ -209,15 +234,41 @@ _Insert Text Here_
 
 ## Step Three: The Visualization
 
-You will now create a graphical display of your data that includes cartographic elements such as legend, scale bar, north arrow, etc.
+You will now create a graphical display of your data that includes cartographic elements such as legend, scale bar, north arrow, etc. In this visualization you will also learn to add a different basemap, add an inset or overview map, and alter the projected coordinate system. 
 
 <details><summary><big>View directions in <b> [ArcGIS Pro]{style="color:#ff4500"} </b></span></big></summary>
 
-Blah...blah...blah...
+On the _Map Tab_&nbsp; click the **Basemap** button <img src= "Images/arcgis-basemap-button.jpg" alt="Basemaps" width="20" height="20"> and select the option for _Oceans_. Remember that the order of the datasets in the Table of Contets determines what order they are displayed.
+
+<p align="center"><div class="zoom"><img src= "Images/arcgis-basemaps.png" alt="Basemaps" style="width:100%"></div></p>
+
+In future exercises you may choose any of these basemap options that are apprropriate for your analyses. Next, on the _Insert Tab_&nbsp; click the button for **New Map** <img src= "Images/arcgis-new-map-button.jpg" alt="Insert New Map" width="20" height="20"> and select New Map. A new map tab (probably called Map2) will appear in your map frame. Add (or copy/paste from the original map) the hurricane impacted counties and the continental US States shapefiles as well as the Oceans basemap to this new map. Be sure to zoom in a appropriate to see the data.
+
+<p align="center"><img src= "Images/arcgis-map2.png" alt="Inset Map" style="width:100%"></p>
+
+To return to the original map simply click on the appropriate tab. This will allow you to switch back and forth between the two in order to make the necessary customizations. It may be beneficial to rename each one to keep track of the purpose for each map.
+
+Next you can change the projection of the coordinate system for the inset map (Map2). In the Table of Contents, right-click on **Map2** and select _Properties_. In the resulting window click **Coordinate Systems** from the left-side menu. Under "XY Coordinate Systems Available" scroll down until you see _Projected Coordinate System_. Using the series of drop-down menus go to **Projected Coordinate System > Continental > North America** and select the option for "North America Albers Equal Area Conic" and click OK. You should notice that the awkward "flat top" border of the United States should now me curved and the overall shape of the states has a more pleasing appearance.
+
+<p align="center"><div class="zoom"><img src= "Images/arcgis-coordinate-systems.png" alt="Altering Coordinate systems" style="width:100%"></div></p>
+
+In lecture we will discuss the importance of projections and coordinate systems. In future exercises you should take some time to select different options to see which _Coordinate System_&nbsp; has the most pleasing shape to your eyes.
+
+It is now time for you to make your map. Similar to **[previous exercises](https://chrismgentry.github.io/GIS1-Exercise-2/#13_Step_Three:_The_Visualization)**, you need to add all of the necessary elements discussed in Exercise 2 and 3. In this exercise you will also need to add your inset map (Map2). To do this, you first need to add the primary map with using the Map Frame button like before. Next you can click the Map Frame button again to add the second map.
+
+<p align="center"><div class="zoom"><img src= "Images/arcgis-add-map2.png" alt="Add Inset Map" style="width:100%"></div></p>
+
+However, for the inset you want it to be smaller and not cover your map data.
+
+<p align="center"><div class="zoom"><img src= "Images/arcgis-map-and-inset.png" alt="Map with Inset Map" style="width:100%"></div></p>
+
+Finalize your map by adding all of the necessary map elements (title, legend, north arrow, scale bar, name and date) and altering the symbology of the hurricane dataset to provide additional important data. Remember to renaming items in the Table of Contents will rename them in the legend.
+
+<p align="center"><img src= "Images/arcgis-final-map.png" alt="Final Map" style="width:100%"></p>
 
 <big><b>Question No. 3</b></big>
 <blockquote>
-_Insert Text Here_
+How many total impacted counties are included in the new dataset?
 </blockquote>
 
 </details>
@@ -246,13 +297,25 @@ _Insert Text Here_
 
 </details>
 
-## Step Four: The Proposal
+## Step Four: Your Turn
 
-Blah...blah...blah...
+After providing the initial map to FEMA, the Deputy Associate Administrator for the Office of Response and Recovery has asked if you could add some additional data. Specifically, they are interested in cities with a population of greater than 300,000 so they are able to situate response teams in proximity to the most people.
 
 <details><summary><big>View directions in <b> [ArcGIS Pro]{style="color:#ff4500"} </b></span></big></summary>
 
-Blah...blah...blah...
+If you did not previously download the [cities data](https://github.com/chrismgentry/GIS1-Exercise-4/raw/main/Data/US_Cities_100k.zip) from the GitHub Exercise Page please download the data and unzip it in your project folder. With that data available, add the US_Cities_100k.shp to your primary map (not the inset map). Repeating the steps to **clip** from [Step 1](https://chrismgentry.github.io/GIS1-Exercise-4/#11_Step_One:_The_Data) select the cities as your _Input Feature_, the hurricane buffer as the _Clip Feature_, and be sure to save the new dataset to your project folder with .shp to create a shapefile.
+
+While you will leave all of the clipped cities on the map, you will now create a _Label Class_ to only create labels for cities with a population greater than 300,000. To begin, right-click on your new clipped cities dataset and select "Labeling Properties..." <img src= "Images/arcgis-labeling-properties.jpg" alt="Labeling Properties" width="150" height="20"> from the options.
+
+Under the "Class" option in the Label Class window select **SQL** from the three options. Next select _New expression_&nbsp; <img src= "Images/arcgis-new-expression-labels.jpg" alt="Labeling SQL" width="115" height="20"> and select the following options:
+
+<p align="center">Where&emsp;**POPULATION**&emsp;**is greater than**&emsp;**300,000**</p>
+
+<p align="center"><img src= "Images/arcgis-labeling-sql.png" alt="SQL Options for Labeling" style="width:75%"></p>
+
+When complete, click **Apply** at the bottom of the window. Use the options on the _Labeling Tab_ for the dataset to adjust the label field to NAME, change the font or size of the text, and click the **Label** button on the left of the tab.
+
+<p align="center"><div class="zoom"><img src= "Images/arcgis-labeling-tab.jpg" alt="Labeling Options" style="width:100%"></div></p>
 
 <big><b>Question No. 4</b></big>
 <blockquote>
@@ -280,13 +343,18 @@ Blah...blah...blah...
 
 <big><b>Question No. 4</b></big>
 <blockquote>
-_Insert Text Here_
+What labeled cities are the furthest North, South, East, and West?
 </blockquote>
 
 </details>
 
 # The Write-Up
 
-Blah...blah...blah...
+In the report you provide to FEMA please provide the following information:
+
+- Total population of the impacted counties
+- Total number of large cities (all in the clipped dataset)
+- Which cities above 300,000 people would need response teams
+  - Based on the distribution of these, would it be possible for one response team to cover multiple large cities?
 
 When complete, send a link to your _Colab Notebook_ or word document with answers to Questions 1-4 and your completed map via email.
