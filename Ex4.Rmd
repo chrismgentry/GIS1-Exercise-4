@@ -374,11 +374,44 @@ How many total impacted counties are included in the new dataset?
 
 <details><summary><big>View directions in <b> [QGIS]{style="color:#006400"} </b></span></big></summary>
 
-Blah...blah...blah...
+To create this visualization you are going to also create what is called an inset or indicator map. These are smaller maps that are used to provide additional detail about a specific location. These maps are often small scale versions or the primary map, but sometimes can be larger scale to enhance detail in congested areas. In this case it will be a small scale version of the continental US.
+
+To begin this process you are going to create some organizations in the Layer Menu by using the **Add Group** button <img src= "Images/qgis-layers-add-group.jpg" alt="Add Groups" width="20" height="20">. Name the first group "Main Map" and create a second group called "Inset Map". 
+
+<p align="center"><img src= "Images/qgis-layers-menu-groups.jpg" alt="Layers Groups" style="width:60%"></p>
+
+In the Layers Menu you can click and drag the datasets into the different groups as well as right/CRTL-click to copy and paste. For this exercise you should order your datasets as follows:
+
+- **Main Map**
+  - Hurricanes Dataset
+  - Hurricane Impacted Counties
+  - Selected States
+  - Clipped Counties
+  - Continental US
+  - Google Satellite Imagery
+- **Inset Map**
+  - Hurricane Buffer
+  - Selected States
+  - Continental US
+  - Google Satellite Imagery
+
+<p align="center"><img src= "Images/qgis-layers-with-groups.jpg" alt="Layers Groups" style="width:60%"></p>
+
+Similar to **[previous exercises](https://chrismgentry.github.io/GIS1-Exercise-2/#13_Step_Three:_The_Visualization)**, your visualization should include all of the necessary map elements discussed in Exercise 2 and 3. However, you will also need to add the inset map for this exercise. To do this, you first need to create a _New Print Layout_, and with the "Main Map" selected and the "Inset Map" hidden in the Layers Menu, and add the map with the _Add map_&nbsp; tool like before. 
+
+<p align="center"><div class="zoom"><img src= "Images/qgis-layout-main-map.png" alt="Layout with Main Map" style="width:100%"></div></p>
+
+In the item properties for the map, set your level of zoom and align the map in your desired location. Then under _Layers_&nbsp; section, click "Lock Layers" to keep the map frame from being altered. You can always return to this layer and unlock it if you need to make changes.
+
+Next return to the project and turn off the Main Map, then turn on the Inset Map and return to the layout and add another map. Because you have the inset group selected and the main map group hidden, the additional map frame will contain the inset information. Remember to think about where you want the inset to be located before you draw it on the layout. While you can change this at anytime, you should always have a planned map design.
+
+<p align="center"><div class="zoom"><img src= "Images/qgis-layout-inset-map.png" alt="Layout with Inset Map" style="width:100%"></div></p>
+
+Finalize your map by adding all of the necessary map elements (title, legend, north arrow, scale bar, name and date) and altering the symbology of the hurricane dataset to provide additional important data. Remember to renaming items in the Table of Contents will rename them in the legend but you will need to update in the item properties. Alternatively, in the item properties for the legend you can select any object and click the Edit button <img src= "Images/qgis-edit-item-properties-button.jpg" alt="Add Groups" width="20" height="20"> to rename them.
 
 <big><b>Question No. 3</b></big>
 <blockquote>
-_Insert Text Here_
+How many total impacted counties are included in the new dataset?
 </blockquote>
 
 </details>
@@ -401,7 +434,7 @@ After providing the initial map to FEMA, the Deputy Associate Administrator for 
 
 <details><summary><big>View directions in <b> [ArcGIS Pro]{style="color:#ff4500"} </b></span></big></summary>
 
-If you did not previously download the [cities data](https://github.com/chrismgentry/GIS1-Exercise-4/raw/main/Data/US_Cities_100k.zip) from the GitHub Exercise Page please download the data and unzip it in your project folder. With that data available, add the US_Cities_100k.shp to your primary map (not the inset map). Repeating the steps to **clip** from [Step 1](https://chrismgentry.github.io/GIS1-Exercise-4/#11_Step_One:_The_Data) select the cities as your _Input Feature_, the hurricane buffer as the _Clip Feature_, and be sure to save the new dataset to your project folder with .shp to create a shapefile.
+If you did not previously download the [cities data](https://github.com/chrismgentry/GIS1-Exercise-4/raw/main/Data/US_Cities_100k.zip) from the GitHub Exercise Page please download the data and unzip it in your project folder. With that data available, add the US_Cities_100k.shp to your primary map (not the inset map). Repeating the steps to **clip** from [Step 1](https://chrismgentry.github.io/GIS1-Exercise-4/#11_Step_One:_The_Data) select the cities as your _Input Feature_, the hurricane buffer as the _Clip Feature_, and be sure to save the new dataset to your project folder with .shp to create a shapefile. You can now remove the US Cities from the project but keep your clipped cities.
 
 While you will leave all of the clipped cities on the map, you will now create a _Label Class_ to only create labels for cities with a population greater than 300,000. To begin, right-click on your new clipped cities dataset and select "Labeling Properties..." <img src= "Images/arcgis-labeling-properties.jpg" alt="Labeling Properties" width="150" height="20"> from the options.
 
@@ -417,7 +450,7 @@ When complete, click **Apply** at the bottom of the window. Use the options on t
 
 <big><b>Question No. 4</b></big>
 <blockquote>
-_Insert Text Here_
+What labeled cities are the furthest North, South, East, and West?
 </blockquote>
 
 </details>
@@ -425,11 +458,23 @@ _Insert Text Here_
 
 <details><summary><big>View directions in <b> [QGIS]{style="color:#006400"} </b></span></big></summary>
 
-Blah...blah...blah...
+If you did not previously download the [cities data](https://github.com/chrismgentry/GIS1-Exercise-4/raw/main/Data/US_Cities_100k.zip) from the GitHub Exercise Page please download the data and unzip it in your project folder. With that data available, add the US_Cities_100k.shp to your primary map (not the inset map). Repeating the steps to **clip** from [Step 1](https://chrismgentry.github.io/GIS1-Exercise-4/#11_Step_One:_The_Data) select the cities as your _Input Layer_, the hurricane buffer as the _Overlay Layer_, and be sure to save the new dataset to your project folder in the _Clipped_&nbsp; option. You can now remove the US Cities from the project but keep your clipped cities.
+
+While you will leave all of the clipped cities on the map, you will now create a Label Class to only create labels for cities with a population greater than 300,000. To begin, right/CRTL-click on your new clipped cities dataset and select “Properties”. Under the **Labels** tab on the left side of the new window, select _Rule-based Labeling_&nbsp; from the drop-down menu at the top of the window. Next, click the <b>[Green +]{style="color:#006400"}</b> at the bottom to add a new rule. Provide the following inputs and click OK
+
+- _Description_ = Give your rule a name
+- _Filter_ = Type the following: ``` "POPULATION" > 300000```
+- _Labels_ = Check this box
+- _Value_ = NAME
+- _Text, Formatting, Buffer, Mask, etc._ = Customize as necessary for your preferred style
+
+<p align="center"><img src= "Images/qgis-rule-based-labels.png" alt="Rule-based Options for Labeling" style="width:100%"></p>
+
+Finally, click OK on the layer properties window. You will need to return to your main map in the layout and uncheck the box for locked to update the map with this new information.
 
 <big><b>Question No. 4</b></big>
 <blockquote>
-_Insert Text Here_
+What labeled cities are the furthest North, South, East, and West?
 </blockquote>
 
 </details>
@@ -441,7 +486,7 @@ Blah...blah...blah...
 
 <big><b>Question No. 4</b></big>
 <blockquote>
-What labeled cities are the furthest North, South, East, and West?
+_Insert Text Here_
 </blockquote>
 
 </details>
