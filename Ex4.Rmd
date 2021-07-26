@@ -130,11 +130,11 @@ Finally, while having the individual hurricane tracts can be important, for the 
 
 <p align="center"><div class="zoom"><img src= "Images/arcgis-merged-data.png" alt="Merged Hurricanes" style="width:100%"></div></p>
 
-Now you can remove the _USA_Counties_&nbsp; and all the individual hurricane tract files to reduce the clutter in your Table of Contents. To do this you simply right-click on the dataset in the Table of Contents and click _Remove_.
+Now you can remove the _USA_Counties_&nbsp; and all the individual hurricane track files to reduce the clutter in your Table of Contents. To do this you simply right-click on the dataset in the Table of Contents and click _Remove_.
 
 <big><b>Question No. 1</b></big>
 <blockquote>
-How many individual tract segments are contained in the merged hurricane dataset?
+How many individual track segments are contained in the merged hurricane dataset?
 </blockquote>
 
 </details>
@@ -189,17 +189,17 @@ This will create a dataset containing only the counties that are included within
 
 Finally, while having the individual hurricane tracts can be important, for the purposes of this exercise you are going to use the **Merge vector layers** tool to combined all of the individual hurricane tracts into a single dataset. To locate this tool you will need to click the _Toolbox_&nbsp; button <img src= "Images/qgis-toolbox-button.jpg" alt="Processing Toolbox Button" width = "20" height = "20"> on the toolbar. This will open the **Processing Toolbox** side menu and allow you to search for merge.
 
-Double click on the **Merge vector layers** tool and in the new window click the <img src= "Images/qgis-folder-select-button.jpg" alt="Select Folder and File Name" width = "20" height = "20"> button for the _Input layers_. The window will shift to allow you to select all of the individual hurricane tract layers. When complete click the return arrow <img src= "Images/qgis-input-layers-return-button.jpg" alt="Select Folder and File Name" width = "20" height = "20"> to go back to the Merge Vector Layers dialog box. The _Input layers_&nbsp; should now say "5 inputs selected." Next, click the <img src= "Images/qgis-folder-select-button.jpg" alt="Select Folder and File Name" width = "20" height = "20"> button for the section that says _Merged_. While you could make this a temporary layer, it would be best to save the file similar to in the previous steps to retain access to the new dataset.
+Double click on the **Merge vector layers** tool and in the new window click the <img src= "Images/qgis-folder-select-button.jpg" alt="Select Folder and File Name" width = "20" height = "20"> button for the _Input layers_. The window will shift to allow you to select all of the individual hurricane track layers. When complete click the return arrow <img src= "Images/qgis-input-layers-return-button.jpg" alt="Select Folder and File Name" width = "20" height = "20"> to go back to the Merge Vector Layers dialog box. The _Input layers_&nbsp; should now say "5 inputs selected." Next, click the <img src= "Images/qgis-folder-select-button.jpg" alt="Select Folder and File Name" width = "20" height = "20"> button for the section that says _Merged_. While you could make this a temporary layer, it would be best to save the file similar to in the previous steps to retain access to the new dataset.
 
 <p align="center"><div class="zoom"><img src= "Images/qgis-merge-dialog2.png" alt="Merged Vector Layers Dialog" style="width:100%"></div></p>
 
-Now you can remove the _USA_Counties_&nbsp; and all the individual hurricane tract files to reduce the clutter in your Layers menu. To do this you simply right/CRTL-click on the dataset in the Layers menu and click _Remove Layer_ or hiding the layer by unchecking the _hide layer_&nbsp; button <img src= "Images/qgis-hide-layer-button.jpg" alt="Hide Layer Button" width = "20" height = "20">. 
+Now you can remove the _USA_Counties_&nbsp; and all the individual hurricane track files to reduce the clutter in your Layers menu. To do this you simply right/CRTL-click on the dataset in the Layers menu and click _Remove Layer_ or hiding the layer by unchecking the _hide layer_&nbsp; button <img src= "Images/qgis-hide-layer-button.jpg" alt="Hide Layer Button" width = "20" height = "20">. 
 
 <p align="center"><div class="zoom"><img src= "Images/qgis-merged-data.png" alt="Merged Data Example" style="width:100%"></div></p>
 
 <big><b>Question No. 1</b></big>
 <blockquote>
-How many individual tract segments are contained in the merged hurricane dataset?
+How many individual track segments are contained in the merged hurricane dataset?
 </blockquote>
 
 </details>
