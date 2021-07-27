@@ -83,13 +83,13 @@ As you have done with each of the previous exercises, [Exercise 2](https://chris
 
 With your screen now displaying the _World Topographic Map_&nbsp; and _World Hillshade_&nbsp; in the table of contents, navigate to GitHub and download **[all datasets for this exercise here](https://github.com/chrismgentry/GIS1-Exercise-4/tree/main/Data)** to your project folder and extract the data. If you have any questions on how to retrieve and extract the data refer to [Exercise 2, Step 1](https://chrismgentry.github.io/GIS1-Exercise-2/#11_Step_One:_The_Data) for detailed instructions.
 
-Add the _states_, _counties_, and all _hurricanes_&nbsp; datasets to the map view. Remember that the layers in your _Table of Contents_&nbsp; are drawn in the order they appear. So the first item on the list will be the first show, followed, by the second and so on. Therefore, if you want certain datasets to be visible above all others it should be located at the top by clicking and dragging the data up or down in the list. For polygons, you can edit the fill and transparency (found under the appearance tab in effects) to allow for items underneath to be scene. For example, in the image below, the hurricane tracts are ordered by year and are situated on top of the county and state polygons. If the polygons were drawn first, the hurricane tracts would not be shown once they make landfall. In this example, the states polygons are displayed with a hollow fill and white border to allow for the counties to show through with their black borders.
+Add the _states_, _counties_, and all _hurricanes_&nbsp; datasets to the map view. Remember that the layers in your _Table of Contents_&nbsp; are drawn in the order they appear. So the first item on the list will be the first show, followed, by the second and so on. Therefore, if you want certain datasets to be visible above all others it should be located at the top by clicking and dragging the data up or down in the list. For polygons, you can edit the fill and transparency (found under the appearance tab in effects) to allow for items underneath to be scene. For example, in the image below, the hurricane tracks are ordered by year and are situated on top of the county and state polygons. If the polygons were drawn first, the hurricane tracks would not be shown once they make landfall. In this example, the states polygons are displayed with a hollow fill and white border to allow for the counties to show through with their black borders.
 
 <p align="center"><div class="zoom"><img src= "Images/arcgis-ex4-data.jpg" alt="Ex4 Datasets" style="width:100%"></div></p>
 
 Refer back to previous exercises to review how to change the symbology for a given dataset. You should experiment with different order, fill, and transparencies to customize your view of the data.
 
-Because FEMA is only interested in counties impacted by hurricanes, you need to select only the states that are intersected by the tracts. There are several ways to subset data in [ArcGIS Pro]{style="color:#ff4500"}. For this example we can select counties by name through a structured query language (SQL), we can use graphical tools to select data, and we can use geoprocessing tools to subset the data. Because this is a learning module, you will be learning several different techniques. While this might not necessarily be the quickest method, the purpose of this exercise is to introduce you to several tools you can use as appropriate in future projects. 
+Because FEMA is only interested in counties impacted by hurricanes, you need to select only the states that are intersected by the tracks. There are several ways to subset data in [ArcGIS Pro]{style="color:#ff4500"}. For this example we can select counties by name through a structured query language (SQL), we can use graphical tools to select data, and we can use geoprocessing tools to subset the data. Because this is a learning module, you will be learning several different techniques. While this might not necessarily be the quickest method, the purpose of this exercise is to introduce you to several tools you can use as appropriate in future projects. 
 
 To continue gathering data for this exercise you are first going to isolate the data you want to select. In the _Table of Contents_ click the **List by Selection** button <img src= "Images/arcgis-list-selection-button.jpg" alt="List by Selection" width = "20" height = "20"> to show a list of the selectable datasets in the project. Because you should have a number of datasets in the project, to isolate only the states file, right-click on the _USA_States_Continental_&nbsp; and chose "Make this the only selectable layer". 
 
@@ -123,9 +123,9 @@ This will create a dataset containing only the counties that are included within
 
 <p align="center"><div class="zoom"><img src= "Images/arcgis-clipped-data.png" alt="Clipped Counties" style="width:100%"></div><figcaption><small><b>Colors altered from previous images to highlight geoprocessing results.</b></small></figcaption></p>
 
-Finally, while having the individual hurricane tracts can be important, for the purposes of this exercise you are going to use the **Merge** tool to combined all of the individual hurricane tracts into a single dataset. Similar to the previous step, click on the _Tools_&nbsp; button on the Analysis Tab and search for **Merge**. Click on "**Merge** (Data Management Tool)" and in the new window choose the following options from the drop-down menu and click run:
+Finally, while having the individual hurricane tracks can be important, for the purposes of this exercise you are going to use the **Merge** tool to combined all of the individual hurricane tracks into a single dataset. Similar to the previous step, click on the _Tools_&nbsp; button on the Analysis Tab and search for **Merge**. Click on "**Merge** (Data Management Tool)" and in the new window choose the following options from the drop-down menu and click run:
 
-- _Input Datasets_ = Either from the drop-down menu or the _add many button_&nbsp; <img src= "Images/arcgis-add-many-button.jpg" alt="Add Many" width = "10" height = "10"> select all of the individual hurricane tracts. If using the "add many" button you will need to click the "add" link in the bottom right-hand corner of the input. If you use the drop-down menu the data will add automatically
+- _Input Datasets_ = Either from the drop-down menu or the _add many button_&nbsp; <img src= "Images/arcgis-add-many-button.jpg" alt="Add Many" width = "10" height = "10"> select all of the individual hurricane tracks. If using the "add many" button you will need to click the "add" link in the bottom right-hand corner of the input. If you use the drop-down menu the data will add automatically
 - _Output Dataset_ = choose a name for your file and add .shp behind it to create a shapefile.
 
 <p align="center"><div class="zoom"><img src= "Images/arcgis-merged-data.png" alt="Merged Hurricanes" style="width:100%"></div></p>
@@ -147,13 +147,13 @@ As you have done with each of the previous exercises, [Exercise 2](https://chris
 
 With your your empty project created, navigate to GitHub and download **[all datasets for this exercise here](https://github.com/chrismgentry/GIS1-Exercise-4/tree/main/Data)** to your project folder and extract the data. If you have any questions on how to retrieve and extract the data refer to [Exercise 2, Step 1](https://chrismgentry.github.io/GIS1-Exercise-2/#11_Step_One:_The_Data) for detailed instructions.
 
-Add the _states_, _counties_, and all _hurricanes_&nbsp; datasets to the map view. Remember that the datasets in your _Layers_&nbsp;menu are drawn in the order they appear. So the first item on the list will be the first show, followed, by the second and so on. Therefore, if you want certain datasets to be visible above all others it should be located at the top by clicking and dragging the data up or down in the list. For polygons, you can edit the fill and transparency (found under the appearance tab in effects) to allow for items underneath to be scene. For example, in the image below, the hurricane tracts are ordered by year and are situated on top of the county and state polygons. If the polygons were drawn first, the hurricane tracts would not be shown once they make landfall. In this example, the states polygons are displayed with a hollow fill and white border to allow for the counties to show through with their black borders.
+Add the _states_, _counties_, and all _hurricanes_&nbsp; datasets to the map view. Remember that the datasets in your _Layers_&nbsp;menu are drawn in the order they appear. So the first item on the list will be the first show, followed, by the second and so on. Therefore, if you want certain datasets to be visible above all others it should be located at the top by clicking and dragging the data up or down in the list. For polygons, you can edit the fill and transparency (found under the appearance tab in effects) to allow for items underneath to be scene. For example, in the image below, the hurricane tracks are ordered by year and are situated on top of the county and state polygons. If the polygons were drawn first, the hurricane tracks would not be shown once they make landfall. In this example, the states polygons are displayed with a hollow fill and white border to allow for the counties to show through with their black borders.
 
 <p align="center"><div class="zoom"><img src= "Images/qgis-ex4-data.png" alt="Exercise 4 Datasets" style="width:100%"></div></p>
 
 Refer back to previous exercises to review how to change the symbology for a given dataset. You should experiment with different order, fill, and transparencies to customize your view of the data.
 
-Because FEMA is only interested in counties impacted by hurricanes, you need to select only the states that are intersected by the tracts. There are several ways to subset data in [QGIS]{style="color: #006400"}. For this example we can select counties by name through a structured query language (SQL), we can use graphical tools to select data, and we can use geoprocessing tools to subset the data. Because this is a learning module, you will be learning several different techniques. While this might not necessarily be the quickest method, the purpose of this exercise is to introduce you to several tools you can use as appropriate in future projects.
+Because FEMA is only interested in counties impacted by hurricanes, you need to select only the states that are intersected by the tracks. There are several ways to subset data in [QGIS]{style="color: #006400"}. For this example we can select counties by name through a structured query language (SQL), we can use graphical tools to select data, and we can use geoprocessing tools to subset the data. Because this is a learning module, you will be learning several different techniques. While this might not necessarily be the quickest method, the purpose of this exercise is to introduce you to several tools you can use as appropriate in future projects.
 
 To continue gathering data for this exercise you are first going to isolate the data you want to select. Begin by clicking on the _USA_States_Continental_&nbsp; dataset to make it the only selectable layer. Next, suing the **Select Features ** tool <img src= "Images/qgis-select-features-tool.jpg" alt="Select Features Tool" width = "20" height = "20"> use the drop-down menu to choose **Select Features by Freehand**.
 
@@ -187,7 +187,7 @@ This will create a dataset containing only the counties that are included within
 
 <p align="center"><div class="zoom"><img src= "Images/qgis-clipped-data.png" alt="Clipped Data" style="width:100%"></div><figcaption><small><b>Colors altered from previous images to highlight geoprocessing results.</b></small></figcaption></p>
 
-Finally, while having the individual hurricane tracts can be important, for the purposes of this exercise you are going to use the **Merge vector layers** tool to combined all of the individual hurricane tracts into a single dataset. To locate this tool you will need to click the _Toolbox_&nbsp; button <img src= "Images/qgis-toolbox-button.jpg" alt="Processing Toolbox Button" width = "20" height = "20"> on the toolbar. This will open the **Processing Toolbox** side menu and allow you to search for merge.
+Finally, while having the individual hurricane tracks can be important, for the purposes of this exercise you are going to use the **Merge vector layers** tool to combined all of the individual hurricane tracks into a single dataset. To locate this tool you will need to click the _Toolbox_&nbsp; button <img src= "Images/qgis-toolbox-button.jpg" alt="Processing Toolbox Button" width = "20" height = "20"> on the toolbar. This will open the **Processing Toolbox** side menu and allow you to search for merge.
 
 Double click on the **Merge vector layers** tool and in the new window click the <img src= "Images/qgis-folder-select-button.jpg" alt="Select Folder and File Name" width = "20" height = "20"> button for the _Input layers_. The window will shift to allow you to select all of the individual hurricane track layers. When complete click the return arrow <img src= "Images/qgis-input-layers-return-button.jpg" alt="Select Folder and File Name" width = "20" height = "20"> to go back to the Merge Vector Layers dialog box. The _Input layers_&nbsp; should now say "5 inputs selected." Next, click the <img src= "Images/qgis-folder-select-button.jpg" alt="Select Folder and File Name" width = "20" height = "20"> button for the section that says _Merged_. While you could make this a temporary layer, it would be best to save the file similar to in the previous steps to retain access to the new dataset.
 
@@ -206,13 +206,120 @@ How many individual track segments are contained in the merged hurricane dataset
 <hr></hr>
 
 <details><summary><big>View directions in <b> [R]{style="color: #6495ED"} </b></span></big></summary>
-Before you begin, you will need to open the [Ex2 Colab Notebook](https://github.com/chrismgentry/GIS1-Exercise-9/blob/main/GIS1_EX9.ipynb) and insert **tocolab** after _github_ in the URL to open in the _Colab Environment_. As you have seen before, R requires various packages to complete certain analyses. In this exercise you will be using **tidyverse, OpenStreetMaps, ggfortify, maptools, and rgeos**. To install and load the packages we will use the following script:
+Before you begin, you will need to open the [Ex4 Colab Notebook](https://github.com/chrismgentry/GIS1-Exercise-4/blob/main/GIS1_EX4.ipynb) and insert **tocolab** after _github_ in the URL to open in the _Colab Environment_. If you have any questions regarding Colab Notebooks refer to [Exercise 2, Introduction](https://chrismgentry.github.io/GIS1-Exercise-2/) for <b>[R]{style="color: #6495ED"}</b>. Remember to make a copy of the notebook. As you have seen before, R requires various packages to complete certain analyses. In this exercise you will be using **tidyverse, ggsn, cowplot, maps, mapproj, plyr, raster, rgeos, rgdal, sp)**. This is a large number of packages and will take a while to load. To install and load the packages we will use the following script:
 
-Blah...blah...blah...
+```{r install packages, echo=TRUE, message=FALSE, warning=FALSE}
+#install.packages('tidyverse')
+#install.packages('ggsn')
+#install.packages('cowplot')
+#install.packages('maps')
+#install.packages('mapproj')
+#install.packages('plyr')
+#install.packages('raster')
+#install.packages('rgeos')
+#install.packages('rgdal')
+#install.packages('sp')
+library('tidyverse')
+library('ggsn')
+library('cowplot')
+library('maps')
+library('mapproj')
+library('plyr')
+library('raster')
+library('rgeos')
+library('rgdal')
+library('sp')
+library('utils')
+```
+
+In future exercises you will learn how to reduce the script above to load and install packages in fewer lines. Additionally, there are certain functions that are duplicated between different packages. Therefore, in this exercise you will learn to use **::** (double colons) to indicate which package you want to execute a specific function.
+
+For this exercise you will use a combination of built in data from various packages and downloaded data from the above sources in the form of a shapefile. A [shapefile](https://desktop.arcgis.com/en/arcmap/latest/manage-data/shapefiles/what-is-a-shapefile.htm) is a "simple, non-topological format for storing the geometric location and attribute information of geographic features. Features can be represented by points, lines, or polygons. The workspace containing shapefiles may also contain a database manage table, which can store additional attributes that can be joined to a shapefiles features."
+
+In previous exercises you created relatively simplistic maps and design layouts. More fully developed maps contain additional geographic data, or base maps, that can be used to provide reference or location information. In this exercise you will also create an inset map or reference map that provides an overview.
+
+To begin, you will use the information from the _maps package_ to create an object containing the states of Alabama, Arkansas, Delaware, Florida, Georgia, Illinois, Indiana, Kentucky, Louisiana, Maryland, Mississippi, Missouri, New Jersey, North Carolina, Ohio, Pennsylvania, South Carolina, Tennessee, Virginia, and West Virginia. The process is similar to the directions for [Exercise 2, Step 1](https://chrismgentry.github.io/GIS1-Exercise-2/#11_Step_One:_The_Data) and [Exercise 3, Step 1](https://chrismgentry.github.io/GIS1-Exercise-3/#11_Step_One:_The_Data).
+
+```{r se states, echo=TRUE, message=FALSE, warning=FALSE}
+states <- map_data(map = "state", region =  c("alabama","arkansas","delaware","florida","georgia",
+                                              "illinois","indiana","kentucky","louisiana","maryland",
+                                              "mississippi","missouri","new jersey","north carolina","ohio",
+                                              "pennsylvania","south carolina","tennessee","virginia","west virginia"))
+
+ggplot(states) + 
+  geom_polygon(aes(x=long, y=lat, group=group), color = "white") +
+  coord_fixed()
+```
+To add contextual data and avoid the appearance of "floating data" you will next create an object to fill in the surrounding states.
+
+```{r us states, echo=TRUE, message=FALSE, warning=FALSE}
+us <- map_data('state')
+
+ggplot() + 
+  geom_polygon(data = us, aes(x=long, y=lat, group=group), color = "white", fill = "gray") + 
+  geom_polygon(data = states, aes(x=long, y=lat, group=group), color = "white") + 
+  coord_fixed()
+```
+To add the hurricane information from NOAA you need to download the shapefiles, extract the dataset, and read in the files. To do this you will use the ```readOGR``` function from the **[rgdal](https://www.rdocumentation.org/packages/rgdal/versions/1.5-23/topics/readOGR)** package. You will use the `download.file` function and github link to obtain the zip file and the `unzip` function to extract the data. The `readOGR` function requires listing the path to the file to import that data. In the path below you will see a **.** (period) in front of the /Hurricanes folder. The period is a shortcut version to say "in the project folder" instead of typing out the entire folder path.
+
+```{r NOAA data, echo=TRUE, message=FALSE, warning=FALSE}
+download.file('https://github.com/chrismgentry/GIS1-Exercise-4/raw/main/Data/Hurricanes.zip', 'hurricanes.zip')
+unzip('hurricanes.zip')
+
+dorian <- readOGR("./Hurricanes","Dorian_2019_line")
+irma <- readOGR("./Hurricanes","Irma_2017_line")
+laura <-readOGR("./Hurricanes","Laura_2020_line") 
+matthew <-readOGR("./Hurricanes","Matthew_2016_line") 
+michael <-readOGR("./Hurricanes","Michael_2018_line")
+```
+
+Next you will use the `rbind` function, which is a base R function, to combine all of the individual tracks into one. However, because of the structure of the data there are some additional steps that need to be taken before the data can be used in `ggplot2`. The first is to create a column of row ids for each row to use in a future step to connect the data. Then the `fortify` function from **ggplot2** can be used to convert the data to an object that can be imported into the map. Finally, the `join` function from the **plyr** package can be used to attach the data lost in the conversion from the original dataset to the new ggplot2 ready dataset.
+
+```{r combine hurricanes, echo=TRUE, message=FALSE, warning=FALSE}
+hurricanes <- rbind(dorian,irma,laura,matthew,michael)
+hurricanes@data$id <- rownames(hurricanes@data)
+sp_hurricanes <- fortify(hurricanes)
+hurricane_tracks <- plyr::join(sp_hurricanes,hurricanes@data, by = "id")
+```
+
+Next you will take similar steps to download and extract a counties shapefile, subset the counties to include those in the selected states above, and finally, prepare the dataset for use with `ggplot2`.
+
+```{r counties data, echo=TRUE, message=FALSE, warning=FALSE}
+download.file('https://github.com/chrismgentry/GIS1-Exercise-4/raw/main/Data/US_Counties.zip', 'counties.zip')
+unzip('counties.zip')
+
+counties <- readOGR(".","USA_Counties")
+subset_counties <- counties[counties$STATE_NAME == "Alabama" | counties$STATE_NAME == "Arkansas"|
+                                counties$STATE_NAME == "Delaware" | counties$STATE_NAME == "Florida"|
+                                counties$STATE_NAME == "Georgia" | counties$STATE_NAME == "Illinois"|
+                                counties$STATE_NAME == "Indiana" | counties$STATE_NAME == "Kentucky"|
+                                counties$STATE_NAME == "Louisiana" | counties$STATE_NAME == "Maryland"|
+                                counties$STATE_NAME == "Mississippi" | counties$STATE_NAME == "Missouri"|
+                                counties$STATE_NAME == "New Jersey" | counties$STATE_NAME == "North Carolina"|
+                                counties$STATE_NAME == "Ohio" | counties$STATE_NAME == "Pennsylvania"|
+                                counties$STATE_NAME == "South Carolina" | counties$STATE_NAME == "Tennessee"|
+                                counties$STATE_NAME == "Virginia" | counties$STATE_NAME == "West Virginia",]
+
+subset_counties@data$id <- rownames(subset_counties@data)
+counties_data <- fortify(subset_counties)
+se_counties <- plyr::join(counties_data,subset_counties@data, by = "id")
+```
+
+Now you can use `ggplot2` to visualize the data. The steps to display the data are similar to those from [Exercise 2, Step 3](https://chrismgentry.github.io/GIS1-Exercise-2/#13_Step_Three:_The_Visualization) or [Exercise 3, Step 3](https://chrismgentry.github.io/GIS1-Exercise-3/#13_Step_Three:_The_Visualization). 
+
+```{r first visualization, echo=TRUE, message=FALSE, warning=FALSE}
+ggplot() + 
+  geom_polygon(data = us, aes(x=long, y=lat, group=group), color = "white", fill = "gray") +
+  geom_polygon(data = states, aes(x=long, y=lat, group=group), color = "white") +
+    geom_polygon(data = se_counties, aes(x=long, y=lat, group=group), color = "darkgray", fill = "NA") +
+  geom_path(data = hurricane_tracks, aes(x=long, y=lat, group=group), color = "red", size = 2) +
+  coord_fixed(xlim = c(-125,-65), ylim = c(25,50))
+```
+Notice in the code above `coord_fixed()` is used to limit the range of the map. This will be important in future visualizations.
 
 <big><b>Question No. 1</b></big>
 <blockquote>
-_Insert Text Here_
+What variables are present in the hurricane track dataset? Which of these could be used to categorize the data in a new visualization? Answer in the code cell below.
 </blockquote>
 
 </details>
@@ -224,7 +331,7 @@ In this step you will organize and display the data in order to prepare it for t
 <details>
 <summary><big>View Directions in <b> [ArcGIS Pro]{style="color:#ff4500"} </b></big></summary>
 
-Now that you have the necessary data, you need determine which counties are most significantly impacted by the hurricanes. Because hurricane winds can impact areas far away from the eye or the storm, you will begin by creating a buffer around the hurricane tracts. You can either use the **Tools** button <img src= "Images/arcgis-toolbox-button.jpg" alt="Geoprocessing Tools Button" width="20" height="20"> on the _Analysis Tab_&nbsp; or search for **Buffer** in the list of tools next to the button. In the Buffer window select the following options and click run:
+Now that you have the necessary data, you need determine which counties are most significantly impacted by the hurricanes. Because hurricane winds can impact areas far away from the eye or the storm, you will begin by creating a buffer around the hurricane tracks. You can either use the **Tools** button <img src= "Images/arcgis-toolbox-button.jpg" alt="Geoprocessing Tools Button" width="20" height="20"> on the _Analysis Tab_&nbsp; or search for **Buffer** in the list of tools next to the button. In the Buffer window select the following options and click run:
 
 - _Input Features_ = The merged hurricane dataset
 - _Output Feature Class_ = choose a name for your file and add .shp behind it to create a shapefile
@@ -262,7 +369,7 @@ What is the total population (sum information) of the counties impacted by these
 <details>
 <summary><big>View Directions in <b> [QGIS]{style="color:#006400"} </b></big></summary>
 
-Now that you have the necessary data, you need determine which counties are most significantly impacted by the hurricanes. Because hurricane winds can impact areas far away from the eye or the storm, you will begin by creating a buffer around the hurricane tracts. You can either go to **Vector > Geoprocessing Tools > Buffer** on the menu bar or search for **Buffer** in the _Processing Toolbox_&nbsp; (similar to searching for Merge). Double-click on the Buffer tool, select the following options and click Run:
+Now that you have the necessary data, you need determine which counties are most significantly impacted by the hurricanes. Because hurricane winds can impact areas far away from the eye or the storm, you will begin by creating a buffer around the hurricane tracks. You can either go to **Vector > Geoprocessing Tools > Buffer** on the menu bar or search for **Buffer** in the _Processing Toolbox_&nbsp; (similar to searching for Merge). Double-click on the Buffer tool, select the following options and click Run:
 
 <p align="center"><img src= "Images/qgis-buffer-analysis.png" alt="Buffer Tool Dialog" style="width:75%"></p>
 
@@ -321,13 +428,40 @@ What is the total population (sum information) of the counties impacted by these
 <details>
 <summary><big>View Directions in <b> [R]{style="color:#6495ED"} </b></big></summary>
 
-Blah...blah...blah...
+Now that you have the necessary data, you need determine which counties are most significantly impacted by the hurricanes. Because hurricane winds can impact areas far away from the eye or the storm, you will begin by creating a buffer around the hurricane tracks. For this step you will use the `buffer` function from the **raster** package. The function requires:
+
+```
+buffer(x,width=0,dissolve=TRUE)
+```
+where _x_ = the dataset, _width_ = distance in map units, and _dissolve_ = if TRUE, overalpping polygons are dissolved.
+
+```{r buffer, echo=TRUE, message=FALSE, warning=FALSE}
+hurricanes_buffer <- buffer(hurricanes, width = 1, dissolve = TRUE)
+```
+
+With the buffer created you can now use [`intersect`](https://www.rdocumentation.org/packages/raster/versions/3.4-13/topics/intersect) from the **raster** package to select the overlapping counties. More information on [Intersect](https://pro.arcgis.com/en/pro-app/latest/tool-reference/analysis/intersect.htm) can be found on the [ESRI](https://pro.arcgis.com/en/pro-app/latest/tool-reference/analysis/intersect.htm) website. Similar to before, you will need to `fortify` the data and connect to the original dataset.
+
+```{r impacted counties, echo=TRUE, message=FALSE, warning=FALSE}
+intersection <- raster::intersect(hurricanes_buffer,subset_counties)
+intersection@data$id <- rownames(intersection@data)
+hurricanes_counties <- fortify(intersection)
+impacted_counties <- plyr::join(hurricanes_counties,intersection@data, by = "id")
+```
+
+With the intersection complete, the counties that are most impacted by the hurricane (e.g. those within the buffer zone of the tracks) are contained within the _impacted_counties_ object.
 
 <big><b>Question No. 2</b></big>
-<blockquote>
-_Insert Text Here_
-</blockquote>
+To answer this question you will need to create a dataset that won't be used in the map. Due to the dissected nature of the data, you need to examine the distinct _ids_ of the impacted counties. This can be done using the following script:
 
+```
+county_populations <- distinct(impacted_counties, FIPS, .keep_all = TRUE)
+```
+
+Where you are using the _impacted_counties_ dataset and keeping only the _distinct_ federal FIPS code that is unique to each county.
+<blockquote>
+With the dataset above, write a script using <b>sum()</b> to determine the total population impacted by the hurricanes?
+</blockquote>
+<i><small>HINT: Similar to Exercise 3, Question 2 place the object followed by a $ and the variable name between the () in the sum function. You can use <b>str()</b> to view the variables available in the dataset.</small></i>
 </details>
 
 ## Step Three: The Visualization
@@ -419,11 +553,60 @@ How many total impacted counties are included in the new dataset?
 
 <details><summary><big>View directions in <b> [R]{style="color:#6495ED"} </b></span></big></summary>
 
-Blah...blah...blah...
+To create this visualization you are going to also create what is called an inset or indicator map. These are smaller maps that are used to provide additional detail about a specific location. These maps are often small scale versions or the primary map, but sometimes can be larger scale to enhance detail in congested areas. In this case it will be a small scale version of the continental US.
+
+To begin this process you are going to create an additional object for countries of the world.
+
+```{r world, echo=TRUE, message=FALSE, warning=FALSE}
+world <- map_data(map = "world")
+```
+
+You can now create the primary map data. Within the script below you will see some of the common functions used throughout this and previous exercises. There are two changes made from the typical `ggplot2` script to mention:
+
+- geom_path() is a function to add a line based on a series of data points such as hurricane tracks.
+- Within the aes() for geom_path() the color variable was converted to a character (letters) from numeric (numbers). This was done to create discrete variables rather than continuous variables to make a more appropriate legend.
+
+```{r main map, echo=TRUE, message=FALSE, warning=FALSE}
+main_map <- ggplot() + 
+  geom_polygon(data = world, aes(x=long, y=lat, group=group), color = NA, fill = "gray") +
+  geom_polygon(data = us, aes(x=long, y=lat, group=group), color = "white", fill = "DimGray") +
+  geom_polygon(data = se_counties, aes(x=long, y=lat, group=group), fill = "LightGray", color = "DarkGray") +
+  geom_polygon(data = states, aes(x=long, y=lat, group=group), color = "black", fill = NA) +
+  geom_polygon(data = impacted_counties, aes(x=long, y=lat, group=group), color = "DarkGray", fill = "LightSkyBlue") +
+  geom_path(data = hurricane_tracks, aes(x=long, y=lat, group=group, color = as.character(SS)), size = 2, lineend = "round") +
+  scale_color_viridis_d(option = "A", "Saffir\nSimpson\nScale") +
+  coord_fixed(xlim = c(-97,-74), ylim = c(25,44)) + 
+  theme(axis.title.x=element_blank(), axis.title.y=element_blank(), panel.background = element_rect(fill = "lightblue"), 
+        panel.grid.major = element_blank(), panel.grid.minor = element_blank())
+main_map
+```
+
+To create the inset map you will use the _world_ data you created above along with the US and impacted counties datasets.
+
+```{r inset map, echo=TRUE, message=FALSE, warning=FALSE}
+inset <- ggplot() + 
+  geom_polygon(data = world, aes(x=long, y=lat, group=group), color = "white", fill = "gray") +
+  geom_polygon(data = us, aes(x=long, y=lat, group=group), color = "black", fill = "DarkGray") +
+  geom_polygon(data = impacted_counties, aes(x=long, y=lat, group=group), color = NA, fill = "LightSkyBlue") +
+  coord_map(xlim = c(-125,-65), ylim = c(25,50), "conic", lat0 = 30) +
+  theme(panel.background = element_rect(fill = "lightblue"), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), 
+        axis.line=element_blank(), axis.text.x=element_blank(), axis.text.y=element_blank(),axis.ticks=element_blank(), 
+        axis.title.x=element_blank(), axis.title.y=element_blank())
+inset
+```
+
+Notice in each of these scripts created an object out of the ggplot(). This is used to facilitate the creation of the final map when overlaying the inset on the main map. To do this you will use `ggdraw` from the **ggplot2** package. In this function to add the maps using the `draw_plot` function and locate the inset using _x_, _y_, _width_, and _height_ arguments. These values can be altered to move the inset map to any location on the main map. Feel free to experiment with location in Step 4.
+
+```{r step 3 map, echo=TRUE, message=FALSE, warning=FALSE}
+ggdraw() +
+draw_plot(main_map) + 
+draw_plot(inset, x = 0.105, y = 0.72, width = 0.275, height = 0.275)
+```
+There may be a discrepancy between the x, y, width, and height information for the inset in the script above and the Colab Notebook due to the differences in resolution and space limitations of creating the webpage. 
 
 <big><b>Question No. 3</b></big>
 <blockquote>
-_Insert Text Here_
+Provide the full script you would use to add the north arrow, title, scalebar, and name/date information to the map.
 </blockquote>
 
 </details>
@@ -482,11 +665,83 @@ What labeled cities are the furthest North, South, East, and West?
 
 <details><summary><big>View directions in <b> [R]{style="color:#6495ED"} </b></span></big></summary>
 
-Blah...blah...blah...
+Just like the steps above you will use the `download.file`, `unzip`, and `readOGR` functions to download the cities shapefile and extract the information. Also like above, you will need to subset the cities to include only those in the selected states.
+
+```{r cities, echo=TRUE, message=FALSE, warning=FALSE }
+download.file('https://github.com/chrismgentry/GIS1-Exercise-4/raw/main/Data/US_Cities_100k.zip', 'cities.zip')
+unzip('cities.zip')
+
+cities <- readOGR(".","US_Cities_100k")
+
+subset_cities <- cities[cities$ST == "AL" | cities$ST == "AR"|
+                              cities$ST == "DE" | cities$ST == "FL"|
+                              cities$ST == "GA" | cities$ST == "IL"|
+                              cities$ST == "IN" | cities$ST == "KY"|
+                              cities$ST == "LA" | cities$ST == "MD"|
+                              cities$ST == "MS" | cities$ST == "MO"|
+                              cities$ST == "NJ" | cities$ST == "NC"|
+                              cities$ST == "OH" | cities$ST == "PA"|
+                              cities$ST == "SC" | cities$ST == "TN"|
+                              cities$ST == "VA" | cities$ST == "WV",]
+```
+
+With the cities information available you will again use the `intersect` function to limit the cities data to only those within the hurricane buffer.
+
+```{r buffered cities, echo=TRUE, message=FALSE, warning=FALSE }
+cities_intersect <- raster::intersect(subset_cities,hurricanes_buffer)
+cities_intersect@data$id <- rownames(cities_intersect@data)
+se_cities <- data.frame(cities_intersect)
+names(se_cities)[names(se_cities) =="coords.x1"] <- "long"
+names(se_cities)[names(se_cities) =="coords.x2"] <- "lat"
+```
+
+Notice in the script above there is additional code to rename two variables: coords.x1 and coords.x2. Due to the conversion from a shapefile and the intersect, the resulting object needed to be set as a data frame. In the process the coordinate information columns were renamed coords.x1 and coords.x2. Therefore you needed to rename those individual columns to lat and long to remain consistent with the rest of your scripts. 
+
+And finally you will create a query that selects just those cities that have a population greater than 300,000 individuals.
+
+```{r large cities, echo=TRUE, message=FALSE, warning=FALSE }
+large_cities <- se_cities[se_cities$POPULATION > 300000,]
+```
+
+Now you have a number of datasets that can be used to create your final map including:
+
+- World
+- US States
+- Southeast States
+- Southeast Counties
+- Hurricane Impacted Counties
+- Hurricane Tracks
+- Southeast Cities
+- Large Southeast Cities
+
+For your final map, you need to use these datasets to create the visualization requested by FEMA above that includes the geographic information, hurricane tracks, cities, and large cities with populations greater than 300,000. In the Colab Notebok and below is an incomplete `ggplot2` script.
+
+```
+cities_map <- ggplot() + 
+  geom_polygon(data = World...
+  geom_polygon(data = US States...
+  geom_polygon(data = SE Counties...
+  geom_polygon(data = SE States...
+  geom_polygon(data = Impacted Counties...
+  geom_path(data = Hurricane Tracks...
+  scale_color_viridis_d(option = "A", "Saffir\nSimpson\nScale") +
+  geom_point(data = se_cities, aes(x=long, y=lat), color = "yellow") +
+  geom_point(data = large_cities, aes(x=long, y=lat), color = "yellow") +
+  geom_text(data = large_cities, aes(x=long, y=lat, label = NAME, fontface = "bold"), size = 3, 
+            nudge_y = 0.60, nudge_x = 0.25, check_overlap = TRUE, color = "white") +
+  annotate("text", x = -86.85, y = 38.5, label = "Louisville", fontface = "bold", size = 3, color = "white") +
+  coord_sf(Limiting coordinates to focus on the SE US...
+  theme(axis.title.x=element_blank(), axis.title.y=element_blank(),
+        panel.background = element_rect(fill = "lightblue"), 
+        panel.grid.major = element_blank(), panel.grid.minor = element_blank())
+cities_map
+```
+
+Complete this script in the Colab Notebook, including lines for scale bar, north arrow, title, name and date. 
 
 <big><b>Question No. 4</b></big>
 <blockquote>
-_Insert Text Here_
+What labeled cities are the furthest North, South, East, and West?
 </blockquote>
 
 </details>
