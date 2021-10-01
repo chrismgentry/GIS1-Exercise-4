@@ -103,7 +103,7 @@ With the states selected, return the Table of Contents to the "List by Drawing O
 
 - _Input Features_ = USA_States_Continental
 - _Output Location_ = Select a folder for the export. It it important that you do not click into the folder, simply click once to select and click OK (see example).
-- _Output Name_ = choose a name for your file and add .shp behind it to create a shapefile.
+- _Output Name_ = choose a name for your file and **add .shp** behind it to create a shapefile.
 
 <p align="center"><div class="zoom"><img src= "Images/arcgis-export-data.png" alt="Export Data" style="width:100%"></div></p>
 
@@ -155,7 +155,7 @@ Refer back to previous exercises to review how to change the symbology for a giv
 
 Because FEMA is only interested in counties impacted by hurricanes, you need to select only the states that are intersected by the tracks. There are several ways to subset data in [QGIS]{style="color: #006400"}. For this example we can select counties by name through a structured query language (SQL), we can use graphical tools to select data, and we can use geoprocessing tools to subset the data. Because this is a learning module, you will be learning several different techniques. While this might not necessarily be the quickest method, the purpose of this exercise is to introduce you to several tools you can use as appropriate in future projects.
 
-To continue gathering data for this exercise you are first going to isolate the data you want to select. Begin by clicking on the _USA_States_Continental_&nbsp; dataset to make it the only selectable layer. Next, suing the **Select Features ** tool <img src= "Images/qgis-select-features-tool.jpg" alt="Select Features Tool" width = "20" height = "20"> use the drop-down menu to choose **Select Features by Freehand**.
+To continue gathering data for this exercise you are first going to isolate the data you want to select. Begin by clicking on the _USA_States_Continental_&nbsp; dataset to make it the only selectable layer. Next, using the **Select Features ** tool <img src= "Images/qgis-select-features-tool.jpg" alt="Select Features Tool" width = "20" height = "20"> use the drop-down menu to choose **Select Features by Freehand**.
 
 <p align="center"><img src= "Images/qgis-freehand-select-tool.jpg" alt="Freehand Select" style="width:50%"></p>
 
@@ -360,7 +360,7 @@ To answer the following question, open the attribute table for the new dataset y
 
 <big><b>Question No. 2</b></big>
 <blockquote>
-What is the total population (sum information) of the counties impacted by these hurricanes?
+What is the total population (POP2000; sum information) of the counties impacted by these hurricanes?
 </blockquote>
 
 </details>
