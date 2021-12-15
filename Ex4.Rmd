@@ -466,7 +466,7 @@ With the dataset above, write a script using <b>sum()</b> to determine the total
 
 ## Step Three: The Visualization
 
-You will now create a graphical display of your data that includes cartographic elements such as legend, scale bar, north arrow, etc. In this visualization you will also learn to add a different basemap, add an inset or overview map, and alter the projected coordinate system. 
+You will now create a graphical display of your data that includes cartographic elements such as legend, scale bar, north arrow, etc. In this visualization you will also learn to add a different basemap, add an inset or overview map, and alter the projected coordinate system. An inset map is a smaller map used to provide additional detail about a specific location. These maps are often small scale versions of the primary basemap, but sometimes can be larger scale to enhance detail in congested areas. In this case it will be a small scale version of the continental US.
 
 <details><summary><big>View directions in <b> [ArcGIS Pro]{style="color:#ff4500"} </b></span></big></summary>
 
@@ -480,7 +480,7 @@ In future exercises you may choose any of these basemap options that are apprrop
 
 To return to the original map simply click on the appropriate tab. This will allow you to switch back and forth between the two in order to make the necessary customizations. It may be beneficial to rename each one to keep track of the purpose for each map.
 
-Next you can change the projection of the coordinate system for the inset map (Map2). In the Table of Contents, right-click on **Map2** and select _Properties_. In the resulting window click **Coordinate Systems** from the left-side menu. Under "XY Coordinate Systems Available" scroll down until you see _Projected Coordinate System_. Using the series of drop-down menus go to **Projected Coordinate System > Continental > North America** and select the option for "North America Albers Equal Area Conic" and click OK. You should notice that the awkward "flat top" border of the United States should now me curved and the overall shape of the states has a more pleasing appearance.
+Next you can change the projection of the coordinate system for the inset map (Map2). In the Table of Contents, right-click on **Map2** and select _Properties_. In the resulting window click **Coordinate Systems** from the left-side menu. Under "XY Coordinate Systems Available" scroll down until you see _Projected Coordinate System_. Using the series of drop-down menus go to **Projected Coordinate System > Continental > North America** and select the option for "North America Albers Equal Area Conic" and click OK. You should notice that the awkward "flat top" border of the United States should now be curved and the overall shape of the states has a more pleasing appearance.
 
 <p align="center"><div class="zoom"><img src= "Images/arcgis-coordinate-systems.png" alt="Altering Coordinate systems" style="width:100%"></div></p>
 
@@ -553,7 +553,7 @@ How many total impacted counties are included in the new dataset?
 
 <details><summary><big>View directions in <b> [R]{style="color:#6495ED"} </b></span></big></summary>
 
-To create this visualization you are going to also create what is called an inset or indicator map. These are smaller maps that are used to provide additional detail about a specific location. These maps are often small scale versions or the primary map, but sometimes can be larger scale to enhance detail in congested areas. In this case it will be a small scale version of the continental US.
+To create this visualization you are going to also create what is called an inset or indicator map. These are smaller maps that are used to provide additional detail about a specific location. These maps are often small scale versions of the primary basemap, but sometimes can be larger scale to enhance detail in congested areas. In this case it will be a small scale version of the continental US.
 
 To begin this process you are going to create an additional object for countries of the world.
 
@@ -595,7 +595,7 @@ inset <- ggplot() +
 inset
 ```
 
-Notice in each of these scripts created an object out of the ggplot(). This is used to facilitate the creation of the final map when overlaying the inset on the main map. To do this you will use `ggdraw` from the **ggplot2** package. In this function to add the maps using the `draw_plot` function and locate the inset using _x_, _y_, _width_, and _height_ arguments. These values can be altered to move the inset map to any location on the main map. Feel free to experiment with location in Step 4.
+Notice in each of these scripts created an object out of the ggplot(). This is used to facilitate the creation of the final map when overlaying the inset on the main map. To do this you will use `ggdraw` from the **cowplot** package. In this function to add the maps using the `draw_plot` function and locate the inset using _x_, _y_, _width_, and _height_ arguments. These values can be altered to move the inset map to any location on the main map. Feel free to experiment with location in Step 4.
 
 ```{r step 3 map, echo=TRUE, message=FALSE, warning=FALSE}
 ggdraw() +
